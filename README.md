@@ -108,4 +108,8 @@ Location: Pune, Maharashtra, India
 
 ---
 
-⭐ Additional workflows, document processing examples, OCR samples, case studies and enterprise resources will be added regularly.
+## Enterprise Capability Profile
+
+📄 Download the complete capability profile here:
+
+[PRECISE-BPO-Enterprise-Capability-Profile.pdf](./PRECISE-BPO-Enterprise-Capability-Profile.pdf)
