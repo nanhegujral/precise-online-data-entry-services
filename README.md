@@ -1,115 +1,92 @@
-# Enterprise Online Data Entry Services
+# Online Data Entry & Document Processing — Reference
 
-Professional Online Data Entry, OCR, Document Processing, Data Conversion and Business Process Outsourcing Services by **PRECISE BPO SOLUTION**.
+Maintained by [Precise BPO Solution](https://www.precisebposolution.com)
 
----
+> Part of a documentation collection. Start at the
+> [hub repository](https://github.com/nanhegujral/enterprise-data-labeling-and-data-entry)
+> for an overview of all related resources, including AI data annotation and product
+> data management. This repository focuses specifically on data entry, OCR, and
+> document processing.
 
-## About PRECISE BPO SOLUTION
+## Services covered
 
-PRECISE BPO SOLUTION is an enterprise outsourcing company providing secure, scalable and quality-driven data entry and document processing services for businesses worldwide.
+**Business data processing**
+Online/offline data entry · CRM/ERP data entry · spreadsheet data entry · database
+updating
 
-Our services support organizations across Healthcare, Banking, Insurance, Mortgage, Retail, Manufacturing, Logistics, Legal, Education and many other industries.
+**Document processing**
+Invoice · purchase order · receipt · survey · registration form · application form ·
+business card · driver log · airway bill data entry
 
----
+**Industry-specific**
+Healthcare data entry · medical claims processing · mortgage data entry · financial
+data entry · insurance data processing
 
-## Our Services
+**Conversion & digitization**
+PDF to Excel/Word/XML/JSON · image to text · OCR verification · document indexing ·
+archive digitization
 
-- Online Data Entry
-- OCR Data Capture
-- Document Processing
-- Data Conversion
-- Mortgage Data Entry
-- Financial Data Entry
-- Product Data Entry
-- Medical Claim Processing
-- Invoice Data Entry
-- Receipt Data Entry
-- Survey Data Entry
-- Registration Form Processing
-- Admission Form Processing
-- Business Card Data Entry
-- Menu Digitization
-- Airway Bill Processing
-- Electronic Bill of Lading (e-BOL)
-- Driver Log Processing
-- Vehicle Data Entry
-- Legal Document Processing
-- Data Cleansing
-- Data Validation
-- Document Indexing
+## A worked OCR-to-structured-data example
 
----
+Illustrative example of how a scanned invoice line moves through the pipeline —
+structural example only, not real client data.
 
-## Industries We Serve
+**1. Raw OCR extraction (low-confidence, unverified)**
+```text
+Invoce # : lNV-2O26-00931
+Date     : O5/O8/2O26
+Total    : $1,24S.OO
+```
 
-- Healthcare
-- Banking
-- Insurance
-- Mortgage
-- Retail & eCommerce
-- Manufacturing
-- Logistics
-- Transportation
-- Finance
-- Legal
-- Government
-- Education
+**2. Confidence routing**
+Fields with OCR-confidence below threshold (note the `O`/`0` and `l`/`I` confusions
+above — a common OCR failure mode) are flagged and routed to human review rather than
+accepted automatically.
 
----
+**3. Human-verified, validated output (JSON)**
+```json
+{
+  "invoice_number": "INV-2026-00931",
+  "date": "2026-08-05",
+  "total": 1245.00,
+  "currency": "USD",
+  "validation_status": "human_verified",
+  "confidence_flags": ["invoice_number", "date", "total"]
+}
+```
 
-## Why PRECISE BPO SOLUTION
+This mirrors the confidence-routing model described in the
+[enterprise data-entry benchmark](https://github.com/nanhegujral/enterprise-data-entry-operations-benchmark-2026):
+automated extraction handles the high-confidence majority; ambiguous or low-confidence
+fields are routed to human review rather than force-corrected automatically.
 
-- 17+ Years Industry Experience
-- 540+ Skilled Professionals
-- 990M+ Records Processed
-- 120M+ Documents Converted
-- 27+ Countries Served
-- Flexible Engagement Models
-- Fast Turnaround Time
-- ISO 27001-Aligned Processes
-- GDPR-Compliant Workflows
-- HIPAA-Ready Workflows
-- Multi-Level Quality Assurance
+## Output formats
 
----
+Microsoft Excel · CSV · XML · JSON · SQL database · client-specific formats
 
-## Capability Profile
+## Industries
 
-This repository includes our Enterprise Capability Profile covering:
+Healthcare · banking · insurance · mortgage · retail & ecommerce · manufacturing ·
+logistics · transportation · finance · legal · government · education
 
-- Company Overview
-- Service Portfolio
-- Document Processing Workflow
-- OCR Workflow
-- Quality Assurance Process
-- Security Framework
-- Technology Stack
-- Industries Served
-- Delivery Model
-- Representative Engagements
+*(Full cross-collection industry table is in the
+[hub repository](https://github.com/nanhegujral/enterprise-data-labeling-and-data-entry#industries-served).)*
 
----
+## Capability profile
 
-## Website
+The complete Enterprise Capability Profile PDF — covering company overview, document
+workflow, OCR workflow, QA process, and delivery model — is included in this
+repository:
+[`PRECISE-BPO-Enterprise-Capability-Profile.pdf`](./PRECISE-BPO-Enterprise-Capability-Profile.pdf)
 
-https://www.precisebposolution.com/online-data-entry.html
+## Related resources
 
----
+- [Documentation hub](https://github.com/nanhegujral/enterprise-data-labeling-and-data-entry)
+- [AI data annotation & formats](https://github.com/nanhegujral/ai-data-annotation-services)
+- [Online data entry services (official page)](https://www.precisebposolution.com/online-data-entry.html)
 
 ## Contact
 
-**PRECISE BPO SOLUTION**
-
-Website: https://www.precisebposolution.com/online-data-entry.html
-
+Website: [precisebposolution.com/online-data-entry.html](https://www.precisebposolution.com/online-data-entry.html)
 Email: info@precisebposolution.com
-
 Location: Pune, Maharashtra, India
-
----
-
-## Enterprise Capability Profile
-
-📄 Download the complete capability profile here:
-
-[PRECISE-BPO-Enterprise-Capability-Profile.pdf](./PRECISE-BPO-Enterprise-Capability-Profile.pdf)
